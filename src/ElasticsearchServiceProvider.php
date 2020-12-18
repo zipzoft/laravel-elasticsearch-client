@@ -14,6 +14,12 @@ class ElasticsearchServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(__DIR__.'/../config.php', 'elastic.client');
+
+        $this->app->singleton(Client::class, function($app) {
+            $config = $app['config']->get('elastic.client');
+
+            return ClientBuilder::fromConfig($config);
+        });
     }
 
 
@@ -24,9 +30,5 @@ class ElasticsearchServiceProvider extends ServiceProvider
                 __DIR__.'/../config.php' => $this->app->configPath('elastic.client.php'),
             ], 'config');
         }
-
-        $this->app->singleton(Client::class, function($app) {
-            return ClientBuilder::fromConfig($app['config']->get('elastic.client'));
-        });
     }
 }
