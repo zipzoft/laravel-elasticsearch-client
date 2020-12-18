@@ -1,0 +1,35 @@
+{
+    "name": "zipzoft/laravel-elasticsearch-client",
+    "type": "library",
+    "license": "MIT",
+    "description": "Laravel elasticsearch client",
+    "keywords": [],
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "illuminate/support": "^7.0|^8.0",
+        "elasticsearch/elasticsearch": "^7.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zipzoft\\Elasticsearch\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "PA",
+            "role": "DevOps"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Zipzoft\\Elasticsearch\\ElasticsearchServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
