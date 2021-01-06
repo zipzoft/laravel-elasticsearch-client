@@ -1,9 +1,5 @@
 ## Laravel elasticsearch client
 
-#### Required
-```
-"elasticsearch/elasticsearch": "^7.3"
-```
 
 #### Installation
 ```
